@@ -1,0 +1,85 @@
+Drive Train Code
+
+	Some of the main functions that Red Alert Robotics has within this section of our code are the "Drive" function and the "RotateVector" function.
+
+		The "Drive" function is passed 4 doubles: x, y, r, and gyro, as well as 2 booleans: speedModify and halfSpeed.
+			
+			Variable(s)
+				
+				The "x" and "y" doubles are the input we get from the Gamepads that communicate how much to move left to right and forward to back, 
+				respectively.
+				The "r" double is the name we give to the input from the joystick that tells the robot how much to rotate.
+				The "gyro" double is provided with a heading, and in field oriented mode, it corrects the motion of travel based on the robot 
+				orientation.
+				The "speedModify" boolean is used to slow our robot down to half speed, which is our primary travelling speed for added control.
+				The "halfSpeed" boolean is what we use to designate if we are travelling at 25% speed (half of 50%), for even further control.
+				
+			What it does
+				
+				This function is the function that is used to control the robot's position. From the x, y, and r variables passed from the Gamepads,
+				our drivers are able to give movement directions of forward, backward, left, right, and rotate. In addition to these variables,
+				the speedModify is used to set a standard half speed, and the halfSpeed is used for added control.
+				
+		The "RotateVector" function is passed 3 doubles: x, y, and angle.
+		
+			Variable(s)
+				
+				The "x" and "y" doubles are used to designate a 2-dimensional vector which represents the robot's position.
+				The "angle" double is the variable that tells the robot how much to rotate the vector, and hence the robot.
+				
+			What it does
+			
+				This function is used for the rotation of our Mecanum drive. The x and y are passed to the function, from which x is multiplied 
+				by the arcCosine and arcSin respectively and then subtracted by the y multiplied by the arcSin and arcCosine respectively. These
+				values are then set to two temporary variables: xOut, and yOut.
+
+Config File Code
+
+	The Config File Code for our team contains two main functions: The "GetSetting" function and the "LoadFromFile" function.
+	
+		The "GetSetting" function consists of two arguments: A string variable called name and a double called reasonable_default
+		
+			Variables(s)
+			
+				The "name" variable is the name of the preset in our config.txt file such as "drive_max_speed"
+				The "reasonable_default" variable is just a value that we pass to the getSetting that acts as a default should a preset not be
+				available to pull from the selected file.
+				
+			What it does
+			
+				This function is what we use to set all of the different values on our robot. If a programmer wanted to change the value of one
+				of the presets of the robot, then they would just go in and change the value in the configuration file instead of changing the
+				code itself. The function is used through out our code to pull values from the config file and set them to different variables
+				throughout the code using the GetSetting function.
+		
+		The "LoadFromFile" function consists of only one argument, a string called filename
+		
+			Variable(s)
+			
+				The "filename" string is what we pass to LoadFromFile which tells the function which file we want to pull information from.
+			
+			What it does
+			
+				This function calls the private function, "Parse", which we use to take information from a file, and using predefined characters,
+				divide the different configurations into individual parts. These parts can then be used to give different key variables a preset
+				value. Also, a big advantage to a config file is that we can easily change these values without having to reboot the robot.
+
+Speed Controller Code
+
+
+
+Shooter Code
+
+
+
+Scoop Code
+
+
+
+Input Code
+
+
+
+Lookup Table Code
+
+
